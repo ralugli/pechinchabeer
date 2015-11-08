@@ -21,7 +21,7 @@
 			<header class="major">
 				<h2>Selecione o produto de interesse</h2>
 			</header>
-			<select name="product_id">
+			<select name="product_id" id="product_id">
 				<% Product.all.collect do |p| %>
 					<option value="<%= p.id %>" data-image="<%= p.image %>"><%= p.name %></option>
 				<% end %>
@@ -30,8 +30,14 @@
             
             <script>
                 $(document).ready(function(){
-                    var image = $( "#product_id option:selected" ).image;
-                    document.getElementbyId('productImage').appendChild("<img src=\"+ image +\">");
+                    
+                    $("#product_id").change(function(){
+                        var image = $( "#product_id option:selected" ).data("image");
+                        debugger
+                        $("#productImage").html("<img src="+ image +"/>");
+                    })
+                    
+                    
                 })
             </script>
             
