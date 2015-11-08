@@ -75,13 +75,13 @@
 				<h2>Quanto você pagaria por esse produto?</h2>
 			</header>
 
-				<b>Total:</b> <span class="total">R$ 20,00</span> <br />
+				<b>Total:</b> <span class="total">R$ 90,00</span> <br />
 				<span class="totalValidade" style="color: green;margin-left: 40px;display:block; display:none">
-				R$ 15,00</span>
+				R$ 75,00</span>
 
 				<br />
 
-				<label>
+				<label style="margin: 10px 0">
             		<input type="checkbox" name="validade" value="validade" id="validade" class="show" /> 
             	Aceito produtos próximos da validade.
             	</label>
@@ -91,11 +91,6 @@
             		<input type="text" name="preco" id="preco" placeholder="R$" required="required">
             	</div>
             </div>
-
-            <p>
-            	imagem ilustrativa de chance
-            </p>
-
 
 		</div>
 		<a href="#five" class="goto-next scrolly">Próximo</a>
@@ -137,7 +132,7 @@
 <!-- Footer -->
 <section id="footer">
 	<div class="container">
-		<input type="submit" value="Comprar" class="special" />
+		<input type="button" value="Comprar" class="special comprar" />
 	</div>
 	<footer>
 		<ul class="icons">
@@ -154,6 +149,11 @@
 
  <script>
     $(document).ready(function(){
+
+    	$(".comprar").click(function(){
+    		// swal("Fechado!", "Aceito sua proposta de: R$ 50,00 (Economia de 15%)", "success");
+    		sweetAlert("Oops...", "Esse valor fica um pouco dificil... Que tal R$ 75,00 (Economia de 10%)", "error");
+    	})
         
         $("#product_id").change(function(){
             var image = $( "#product_id option:selected" ).data("image");
