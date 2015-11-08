@@ -26,16 +26,16 @@
 					<option value="<%= p.id %>" data-image="<%= p.image %>"><%= p.name %></option>
 				<% end %>
 			</select>
-<!--
+
             
             <script>
-            
-                var image = $( "#product_id option:selected" ).image;
-                document.getElementbyId('productImage').appendChild("<img src=\"+ image +\">");
-                
+                $(document).ready(function(){
+                    var image = $( "#product_id option:selected" ).image;
+                    document.getElementbyId('productImage').appendChild("<img src=\"+ image +\">");
+                })
             </script>
             
--->
+
 			<div id="productImage">
                 
             </div>
