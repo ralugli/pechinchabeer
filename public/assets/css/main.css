@@ -2164,10 +2164,14 @@
 /* Image */
 
 	.image {
-		border: 0;
+		border-radius: 4px;
 		display: inline-block;
 		position: relative;
 	}
+
+    .image.eighty{
+        width: 80%;
+    }
 
 		.image:before {
 			background: url("images/overlay.png");

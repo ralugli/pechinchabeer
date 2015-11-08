@@ -33,8 +33,12 @@
                     
                     $("#product_id").change(function(){
                         var image = $( "#product_id option:selected" ).data("image");
-                        debugger
-                        $("#productImage").html("<img src="+ image +"/>");
+                        var obj = $("#productImage");
+                        obj.fadeOut(function(){
+                            obj.html("<img class=\"image eighty\" src='"+ image +"'>");
+                            obj.fadeIn();
+                        });
+                        
                     })
                     
                     
