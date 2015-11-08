@@ -3,12 +3,12 @@
 <!-- Header -->
 <section id="header">
 	<header class="major">
-		<h1>Compre bebidas nos melhores preços</h1>
-		<p>:D</p>
+		<img src="images/logo-com-transparencia.png" width="200">
+		<p>Bora comprar bebidas com descontos especiais?</p>
 	</header>
 	<div class="container">
 		<ul class="actions">
-			<li><a href="#one" class="button special scrolly">Vamos negociar</a></li>
+			<li><a href="#one" class="button special scrolly">Bora penchinchar?</a></li>
 		</ul>
 	</div>
 </section>
@@ -39,40 +39,73 @@
 			<header class="major">
 				<h2>Selecione o produto de interesse</h2>
 			</header>
-			<select name="product_id" id="product_id">
-				<% Product.all.collect do |p| %>
-					<option value="<%= p.id %>" data-image="<%= p.image %>"><%= p.name %></option>
-				<% end %>
-			</select>
-			<div id="productImage"></div>
-		</div>
-		<a href="#three" class="goto-next scrolly">Próximo</a>
-	</div>
-</section>
-
-<!-- Two -->
-<section id="three" class="main special">
-	<div class="container">
-		<span class="image fit primary"><img src="images/pic01.jpg" alt="" /></span>
-		<div class="content">
-			<header class="major">
-				<h2>Qual a quantidade desejada?</h2>
-			</header>
+			
 			
 			<div class="row uniform">
-            	<div class="12u$">
+
+			<div class="6u 12u$(xsmall)">
+            		<select name="product_id" id="product_id">
+						<option value="">Escolha o produto</option>
+						<% Product.all.collect do |p| %>
+							<option value="<%= p.id %>" data-image="<%= p.image %>" data-min="<%= p.price_min %>" data-max="<%= p.price_max %>"><%= p.name %></option>
+						<% end %>
+					</select>
+            	</div>
+
+            	<div class="6u$ 12u$(xsmall)">
             		<input type="text" name="quantidade" id="quantidade" placeholder="Quantidade" required="required">
             	</div>
+				
             </div>
+
+			<div id="productImage" style="margin-top: 15px"></div>
+
 		</div>
 		<a href="#four" class="goto-next scrolly">Próximo</a>
 	</div>
 </section>
 
-<!-- three -->
+
+<!-- Three -->
 <section id="four" class="main special">
 	<div class="container">
-		<span class="image fit primary"><img src="images/pic02.jpg" alt="" /></span>
+		<span class="image fit primary"><img src="images/pic01.jpg" alt="" /></span>
+		<div class="content">
+			<header class="major">
+				<h2>Quanto você pagaria por esse produto?</h2>
+			</header>
+
+				<b>Total:</b> <span class="total">R$ 20,00</span> <br />
+				<span class="totalValidade" style="color: green;margin-left: 40px;display:block; display:none">
+				R$ 15,00</span>
+
+				<br />
+
+				<label>
+            		<input type="checkbox" name="validade" value="validade" id="validade" class="show" /> 
+            	Aceito produtos próximos da validade.
+            	</label>
+			
+			<div class="row uniform">
+            	<div class="12u$">
+            		<input type="text" name="preco" id="preco" placeholder="R$" required="required">
+            	</div>
+            </div>
+
+            <p>
+            	imagem ilustrativa de chance
+            </p>
+
+
+		</div>
+		<a href="#five" class="goto-next scrolly">Próximo</a>
+	</div>
+</section>
+
+<!-- three -->
+<section id="five" class="main special">
+	<div class="container">
+		<span class="image fit primary"><img src="images/pic01.jpg" alt="" /></span>
 		<div class="content">
 			<header class="major">
 				<h2>Este é seu endereço?</h2>
@@ -95,24 +128,7 @@
             	<div class="6u$ 12u$(xsmall)">
             		
             	</div>
-
             </div>
-
-            
-		</div>
-		<a href="#five" class="goto-next scrolly">Next</a>
-	</div>
-</section>
-
-<!-- Three -->
-<section id="five" class="main special">
-	<div class="container">
-		<span class="image fit primary"><img src="images/pic03.jpg" alt="" /></span>
-		<div class="content">
-			<header class="major">
-				<h2>One more thing</h2>
-			</header>
-			<p>Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum.</p>
 		</div>
 		<a href="#footer" class="goto-next scrolly">Next</a>
 	</div>
@@ -121,19 +137,7 @@
 <!-- Footer -->
 <section id="footer">
 	<div class="container">
-		<header class="major">
-			<h2>Get in touch</h2>
-		</header>
-		<div class="row uniform">
-			<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
-			<div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
-			<div class="12u$"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-			<div class="12u$">
-				<ul class="actions">
-					<li><input type="submit" value="Send Message" class="special" /></li>
-				</ul>
-			</div>
-		</div>
+		<input type="submit" value="Comprar" class="special" />
 	</div>
 	<footer>
 		<ul class="icons">
@@ -142,9 +146,6 @@
 			<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
 			<li><a href="#" class="icon alt fa-dribbble"><span class="label">Dribbble</span></a></li>
 			<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-		</ul>
-		<ul class="copyright">
-			<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Demo Images: <a href="http://unsplash.com">Unsplash</a></li>
 		</ul>
 	</footer>
 </section>
@@ -163,6 +164,16 @@
             });
             
         });
+
+        $("#validade").change(function(){
+        	if ($('#validade').is(':checked')) {
+        		$(".total").addClass("riscado")
+        		$(".totalValidade").show()
+        	} else {
+        		$(".total").removeClass("riscado")
+        		$(".totalValidade").hide()
+        	}
+        })
 
         $( "#cep" ).blur(function() {
           var cep = $("#cep").val();
