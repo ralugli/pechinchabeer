@@ -21,11 +21,14 @@
 			<header class="major">
 				<h2>Selecione o produto de interesse</h2>
 			</header>
-		
-			<%= select("product", "product_id", Product.all.collect {|p| [ p.name, p.id ] }, { include_blank: true })%>
-
+			<select name="product_id">
+				<% Product.all.collect do |p| %>
+					<option value="<%= p.id %>" data-image="<%= p.image %>"><%= p.name %></option>
+				<% end %>
+			</select>
+			<div id="image"></div>
 		</div>
-		<a href="#two" class="goto-next scrolly">Next</a>
+		<a href="#two" class="goto-next scrolly">Próximo</a>
 	</div>
 </section>
 
