@@ -26,7 +26,19 @@
 					<option value="<%= p.id %>" data-image="<%= p.image %>"><%= p.name %></option>
 				<% end %>
 			</select>
-			<div id="image"></div>
+<!--
+            
+            <script>
+            
+                var image = $( "#product_id option:selected" ).image;
+                document.getElementbyId('productImage').appendChild("<img src=\"+ image +\">");
+                
+            </script>
+            
+-->
+			<div id="productImage">
+                
+            </div>
 		</div>
 		<a href="#two" class="goto-next scrolly">Próximo</a>
 	</div>
