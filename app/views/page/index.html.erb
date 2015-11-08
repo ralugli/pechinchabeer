@@ -44,9 +44,7 @@
 					<option value="<%= p.id %>" data-image="<%= p.image %>"><%= p.name %></option>
 				<% end %>
 			</select>
-
 			<div id="productImage"></div>
-
 		</div>
 		<a href="#three" class="goto-next scrolly">Próximo</a>
 	</div>
@@ -158,8 +156,13 @@
         
         $("#product_id").change(function(){
             var image = $( "#product_id option:selected" ).data("image");
-            $("#productImage").html("<img src="+ image +"/>");
-        })
+            var obj = $("#productImage");
+            obj.fadeOut(function(){
+                obj.html("<img class=\"image eighty\" src='"+ image +"'>");
+                obj.fadeIn();
+            });
+            
+        });
 
         $( "#cep" ).blur(function() {
           var cep = $("#cep").val();
