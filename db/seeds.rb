@@ -20,4 +20,11 @@ Product.create([
 		price_max: 5.45
 	},
 
+	{ 
+		name: "Energético Monster Energy 500 ml", 
+		image: "http://www.imigrantesbebidas.com.br/bebida/images/products/mini/3456_Energetico_Monster_Energy_500_ml.jpg", 
+		price_min:  3.99,
+		price_max: 5.99
+	},
+
 ])
