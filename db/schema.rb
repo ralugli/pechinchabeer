@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20151108024018) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+    
+create_table "markets", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
